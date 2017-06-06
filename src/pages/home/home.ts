@@ -11,28 +11,28 @@ export class HomePage {
   resultado : string;
   numero1 : number;
   numero2 : number;
-
   constructor(public navCtrl: NavController) {
     this.numero1=this.numero2=0;
     this.resultado = "";
   }
-
   suma(){
     this.resultado = String(Number(this.numero1) + Number(this.numero2));
   }
-
   resta(){
     this.resultado = String(Number(this.numero1) - Number(this.numero2));
   }
 
   mul(){
-    this.resultado = String(Number(this.numero1) * Number(this.numero2)); 
+    this.resultado = String(Number(this.numero1) * Number(this.numero2));
    }
 
   div(){
-    this.resultado = String(Number(this.numero1) / Number(this.numero2));  
+    if (this.numero1==0) {
+        this.resultado = String(0);
+    } else {
+        this.resultado = String(Number(this.numero1) / Number(this.numero2));
+    }
  }
-
   mod(){
     this.resultado = String(Number(this.numero1) %  Number(this.numero2));
   }
